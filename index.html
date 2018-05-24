@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <title>易寻--引领您的智慧城市生活</title>
+   
+    <meta name="author" content="HHH">
+    
+    <meta name="description" content="Easyfind,Easyfinding">
+  
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta name="Resource-type" content="Document">
+
+    <link rel="icon" type="image/png" href="logo_cool.png" sizes="32x32">
+    
+    <link rel="manifest" href="https://alvarotrigo.com/fullPage/favicons/manifest.json">
+    
+    <meta name="apple-mobile-web-app-title" content="fullPage.js">
+    <meta name="application-name" content="fullPage.js">
+    
+    <meta name="msapplication-config" content="https://alvarotrigo.com/fullPage/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="dns-prefetch" href="https://ghbtns.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
+
+    <link rel="alternate" href="https://alvarotrigo.com/fullPage/zh/" hreflang="zh">
+
+    <style type="text/css">
+ 
+.fp-enabled body,html.fp-enabled{
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    -webkit-tap-highlight-color:transparent}
+.fp-section{
+    position:relative;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box}
+.fp-slide{
+    float:left}
+.fp-slide,.fp-slidesContainer{
+    height:100%;
+    display:block}
+.fp-slides{
+    z-index:1;
+    height:100%;
+    overflow:hidden;
+    position:relative;
+    -webkit-transition:all .3s ease-out;
+    transition:all .3s ease-in-outQ1}
+.fp-section.fp-table,.fp-slide.fp-table{
+    display:table;
+    table-layout:fixed;
+    width:100%}
+.fp-tableCell{
+    display:table-cell;
+    vertical-align:middle;
+    width:100%;
+    height:100%}
+.fp-slidesContainer{
+    float:left;
+    position:relative}
+.fp-controlArrow{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -khtml-user-select:none;
+    -ms-user-select:none;
+    position:absolute;
+    z-index:4;
+    top:50%;
+    cursor:pointer;
+    width:0;
+    height:0;
+    border-style:solid;
+    margin-top:-38px;
+    -webkit-transform:translate3d(0,0,0);
+    -ms-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0)}
+.fp-controlArrow.fp-prev{
+    left:15px;
+    width:0;
+    border-width:38.5px 34px 38.5px 0;
+    border-color:transparent #fff transparent transparent}
+.fp-controlArrow.fp-next{
+    right:15px;
+    border-width:38.5px 0 38.5px 34px;
+    border-color:transparent transparent transparent #fff}
+.fp-scrollable{
+    position:relative}
+.fp-scrollable,.fp-scroller{
+    overflow:hidden}
+.iScrollIndicator{
+    border:0!important}
+.fp-notransition{
+    -webkit-transition:none!important;
+    transition:none!important}
+#fp-nav,.fp-slidesNav{
+    opacity:1;
+    -webkit-transform:translate3d(0,0,0)}
+#fp-nav{
+    margin-top:-32px;
+    top:50%;
+    position:fixed;
+    z-index:100}
+#fp-nav.right{
+    right:17px}
+#fp-nav.left{
+    left:17px}
+.fp-slidesNav{
+    position:absolute;
+    z-index:4;
+    -ms-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
+    left:0!important;
+    right:0;
+    margin:0 auto!important}
+.fp-slidesNav.bottom{
+    bottom:17px}
+.fp-slidesNav.top{
+    top:17px}
+#fp-nav ul,.fp-slidesNav ul{
+    margin:0;
+    padding:0}
+#fp-nav ul li,.fp-slidesNav ul li{
+    display:block;
+    width:14px;
+    height:13px;
+    margin:7px;
+    position:relative}
+.fp-slidesNav ul li{
+    display:inline-block}
+#fp-nav ul li a,.fp-slidesNav ul li a{
+    display:block;
+    position:relative;
+    z-index:1;
+    width:100%;
+    height:100%;
+    cursor:pointer;
+    text-decoration:none}
+#fp-nav ul li a.active span,#fp-nav ul li:hover a.active span,.fp-slidesNav ul li a.active span,.fp-slidesNav ul li:hover a.active span{
+    height:12px;
+    width:12px;
+    margin:-6px 0 0 -6px;
+    border-radius:100%}
+#fp-nav ul li a span,.fp-slidesNav ul li a span{
+    border-radius:50%;
+    position:absolute;
+    z-index:1;
+    height:4px;
+    width:4px;
+    border:0;
+    background:#333;
+    left:50%;
+    top:50%;
+    margin:-2px 0 0 -2px;
+    -webkit-transition:all .1s ease-in-out;
+    -moz-transition:all .1s ease-in-out;
+    -o-transition:all .1s ease-in-out;
+    transition:all .1s ease-in-out}
+#fp-nav ul li:hover a span,.fp-slidesNav ul li:hover a span{
+    width:10px;
+    height:10px;
+    margin:-5px 0 0 -5px}
+#fp-nav ul li .fp-tooltip{
+    position:absolute;
+    top:-2px;
+    color:#fff;
+    font-size:14px;
+    font-family:arial,helvetica,sans-serif;
+    white-space:nowrap;
+    max-width:220px;
+    overflow:hidden;
+    display:block;
+    opacity:0;
+    width:0;
+    cursor:pointer}
+#fp-nav ul li:hover .fp-tooltip,#fp-nav.fp-show-active a.active+.fp-tooltip{
+    -webkit-transition:opacity .2s ease-in;
+    transition:opacity .2s ease-in;
+    width:auto;
+    opacity:1}
+#fp-nav ul li .fp-tooltip.right{
+    right:20px}
+#fp-nav ul li .fp-tooltip.left{
+    left:20px}
+.fp-auto-height .fp-slide,.fp-auto-height .fp-tableCell,.fp-auto-height.fp-section,.fp-responsive .fp-auto-height-responsive .fp-slide,.fp-responsive .fp-auto-height-responsive .fp-tableCell,.fp-responsive .fp-auto-height-responsive.fp-section{
+    height:auto!important}
+</style>
+
+
+
+
+
+    <style id="stylesheet-critical" type="text/css">@CHARSET "ISO-8859-1";
+    blockquote,body,dd,div,dl,dt,fieldset,form,h2,h3,h4,h5,h6,input,li,ol,p,pre,td,textarea,th,ul{
+        padding:0;
+        margin:0}
+    a{
+        text-decoration:none}
+    table{
+        border-spacing:0}
+    abbr,acronym,fieldset,img{
+        border:0}
+    address,caption,cite,code,dfn,em,th,var{
+        font-weight:400;
+        font-style:normal}
+    h1,strong{
+        font-weight:700}
+    strong{
+        font-style:normal}
+    ol,ul{
+        list-style:none}
+    caption,th{
+        text-align:left}
+    h1{
+        padding:0;
+        font-size:8em;
+        margin:0 0 .25em}
+    h2,h3,h4,h5,h6{
+        font-weight:400;
+        font-size:100%}
+    q:after,q:before{
+        content:''}
+    *{
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box}
+    #fullpage,.section,body,html{
+        height:100%}
+    .section.fp-table{
+        display:table;
+        table-layout:fixed;
+        width:100%}
+    .fp-tableCell{
+        display:table-cell;
+        vertical-align:middle;
+        width:100%;
+        height:100%}
+    .examples,.fp-slidesNav.bottom{
+        display:none}
+    body{
+        font-family:arial,helvetica;
+        color:#fff}
+    [data-lang=ru] h1{
+        font-size:6em}
+    #section-1 h2,.intro p{
+        -webkit-font-smoothing:antialiased;
+        -moz-font-smoothing:antialiased}
+    .intro p{
+        max-width:-webkit-calc(30em - (1.3em*2));
+        max-width:calc(30em - (1.3em*2));
+        margin-right:auto;
+        margin-left:auto;
+        padding-right:1.3em;
+        padding-left:1.3em;
+        font-size:1.5em}
+    #fp-nav ul li a span,#menu-line,.fp-slidesNav ul li a span{
+        background:#fff}
+    .section,.twitter-share i,.wrap{
+        position:relative}
+    .section{
+        text-align:center}
+    .wrap{
+        margin-left:auto;
+        margin-right:auto;
+        width:960px}
+    #menu-line{
+        position:absolute;
+        bottom:-4px;
+        left:0;
+        width:159px;
+        height:2px}
+    #menu{
+        position:fixed;
+        top:20px;
+        right:20px;
+        z-index:70;
+        -webkit-font-smoothing:antialiased;
+        -moz-font-smoothing:antialiased;
+        letter-spacing:1px;
+        font-size:1.1em}
+    #menu li{
+        display:inline-block;
+        margin:10px 0}
+    #menu a{
+        color:#fff;
+        padding:0 1.1em 1.1em}
+    .menu-active{
+        font-weight:700}
+    #menu-theme-mobile{
+        display:none}
+    #section-1{
+        background:#ff5f45}
+    #section-1 h1{
+        font-size:10em;
+        font-weight:900;
+        color:#fff}
+    #section-1 h2{
+        color:rgba(255,255,255,.7);
+        font-size:1.73em;
+        font-weight:100;
+        margin:-10px 30px 10px}
+    #section-1 li,.github-data{
+        display:inline-block;
+        margin:1.25em .3em}
+    .section-1-button{
+        padding:.93em 1.87em;
+        background:#fff;
+        border-radius:5px;
+        display:block;
+        box-shadow: 5px #78909c;
+        color:#ff5f45}
+    #download a{
+        background:#004e67;
+        color:#fff}
+    .section-1-usedBy{
+        background-image:url(https://alvarotrigo.com/fullPage/imgs/trusted-by.png);
+        width:80%;
+        max-width:536px;
+        height:36px;
+        display:block;
+        margin:0 auto;
+        position:absolute;
+        bottom:20px;
+        left:0;
+        right:0}
+    .language{
+        position:absolute;
+        left:20px;
+        top:14px;
+        z-index:99;
+        opacity:1}
+    .languages{
+        display:none}
+    .language-current{
+        margin:15px 0 6px 15px;
+        z-index:99;
+        cursor:pointer}
+    .flag{
+        width:35px;
+        height:24px;
+        display:inline-block;
+        margin:0 17px 0 0;
+        vertical-align:middle;
+        background-image:url(https://alvarotrigo.com/fullPage/imgs/flags.png)}
+    .flag-chinese{
+        background-position:0 0}
+    .flag-english{
+        background-position:-35px 0}
+    .flag-russian{
+        background-position:-70px 0}
+    .flag-korean{
+        background-position:-105px 0}
+    .flag-spanish{
+        background-position:-140px 0}
+    .language-triangle{
+        position:absolute;
+        top:22px;
+        left:3px;
+        fill:#fff;
+        height:6px;
+        width:8px}
+    .twitter-share i{
+        vertical-align:middle;
+        display:inline-block;
+        width:38px;
+        height:14px;
+        color:#fff;
+        top:-4px;
+        left:-2px;
+        fill:#fff}
+    .twitter-share svg{
+        height:40px;
+        margin-top:-10px}
+    @media screen and (max-width:1135px){
+        .fp-tableCell{
+        font-size:.9em}
+    .examples-wrapper{
+        top:100px;
+        -webkit-transform:none;
+        transform:none}
+}
+    @media screen and (max-width:1050px){
+        .fp-tableCell{
+        font-size:.85em}
+}
+    @media screen and (max-width:1030px){
+        #section-3 .intro{
+        width:40%}
+    .shell{
+        width:calc(60% - 54px)}
+}
+    @media screen and (max-width:900px){
+        #section-3 .intro{
+        display:block;
+        text-align:center;
+        width:100%}
+    #section-3 .intro p{
+        display:none}
+    .shell{
+        width:80%;
+        margin:0}
+    #menu{
+        text-align:center;
+        left:0;
+        right:0}
+    #menu-theme-desktop{
+        display:none!important}
+    #menu-theme-mobile{
+        display:inline-block}
+    .language{
+        left:50%;
+        margin-left:-71px;
+        bottom:70px;
+        top:auto;
+        transition:all 1s ease-in;
+        -webkit-transition:all .3s ease-in;
+        opacity:0;
+        visibility:hidden}
+    .fp-viewing-page1 .language{
+        display:block;
+        opacity:1;
+        visibility:visible}
+}
+    @media screen and (max-width:700px){
+        .fp-tableCell{
+        font-size:.8em}
+    #menu a{
+        padding:0 .7em .7em}
+    .my-arrow.left,.my-arrow.right{
+        display:none}
+    .fp-slidesNav.bottom{
+        display:block}
+}
+    @media screen and (max-width:630px){
+        h1{
+        font-size:6.5em}
+    #menu{
+        letter-spacing:0;
+        font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'}
+}
+    @media screen and (max-width:550px){
+        #section-1 h1{
+        font-size:6em}
+    h1{
+        font-size:5em}
+    .intro p{
+        max-width:75%}
+    #menu li a{
+        padding:0 .7em .7em}
+    #download,#menu-contact,.mobile-hide{
+        display:none!important}
+    .shell-body{
+        margin:1.6em}
+    #fp-nav.right{
+        right:7px}
+}
+    @media screen and (max-width:380px){
+        h1{
+        font-size:3.5em}
+    .intro p{
+        max-width:85%}
+    #section-3 .shell{
+        font-size:.8em}
+    .shell-body{
+        margin:1em}
+}
+    @media only screen and (min-width:551px){
+        .mobile-show{
+        display:none}
+}
+</style>
+
+</head>
+<body data-lang="en" >
+<div id="fullpage">
+    <div class="section fp-table" style="background-image: url(tup.png);" id="section-1" >
+        <div class="fp-tableCell">
+            <h1>易寻</h1>
+            <h2>引领您的智慧城市生活</h2>
+            
+            +<h1><img src="logo_cool.png" style="width: 250px;height: 250px;"></h1>
+
+            <ul>
+                <li>
+                    <a class="section-1-button" href="
+                    #" rel="noopener" style="width: 300px;height: 90px;font-size: 30px;text-align: center; ">下载APP</a>
+                </li>   
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="section-2">
+        <button class="my-arrow left">
+            <svg width="60px" height="80px" viewbox="0 0 50 80" xml:space="preserve">
+                <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+                    45.63,75.8 0.375,38.087 45.63,0.375 ">
+            </polyline></svg>
+        </button>
+        <button class="my-arrow right">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewbox="0 0 50 80" xml:space="preserve">
+                <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+                    0.375,0.375 45.63,38.087 0.375,75.8 ">
+            </polyline></svg>
+        </button>
+        <div class="slide active" style="background-image: url(EWM3.png);background-repeat: no-repeat;background-position: center;">
+            <div class="intro" >
+                <h1 style="text-align: left; font-size: 80px;position: absolute;left: 300px;top: 300px;">二维码室内定位系统</h1>
+                <ul style="text-align: left;font-size: 30px;position: absolute;left: 600px;top: 500px; list-style: circle;" >
+                    <li>低成本，高实用性</li>
+                    <li>解决跨楼层定位</li>
+                    <li>稳定性高，不存在定位漂移</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide" id="slide-2-2" style="background-image: url(GXDH.png);background-repeat: no-repeat;background-position: center;">
+            <div class="intro">
+                <h1 style="text-align: left; font-size: 80px;position: absolute;left: 110px;top: 300px;">自主式室内导航方案</h1>
+                     <ul style="text-align: left;font-size: 30px;position: absolute;left: 400px;top: 500px; list-style: circle;">
+                    <li>分段导航简化导航过程</li>
+                    <li>方向传感器匹配导航段</li>
+                    <li>各分段惯性导航</li>    
+            </div>
+        </div> 
+    </div>
+    <div class="section fp-table" id="section-3" style="background-image: url(DXYY.png);background-repeat: no-repeat;background-position: center;">
+        <div class="fp-tableCell">    
+            <div class="intro">
+                <h1 style="text-align: left; font-size: 100px;position: absolute;left: 200px;top: 100px;">典型应用</h1>
+                <p style="text-align: left; font-size: 40px;position: absolute;left: 800px;top: 350px;">停车场反向寻车</p>
+                <p style="text-align: left; font-size: 40px;position: absolute;left: 1300px;top: 700px;">商场导航导购</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section-4" style="background: #ffdab9; background-image:url(TDCY.png);background-repeat: no-repeat;background-position: center;">
+        <div class="intro">
+            <div class="section-4-finger"></div>
+            <h1 style="color: #848484;text-align: left; font-size: 100px;position: absolute;left: 250px;top: 150px;">团队成员</h1>
+           </div>
+    </div>
+</div>
+
+<ul id="menu">
+    <li>
+        <a href="#page1" rel="noopener">
+            <span id="menu-theme-desktop">下载易寻</span>
+            <span id="menu-theme-mobile">下载易寻</span>
+        </a>
+    </li>
+    <li><a href="#page2" >创新实现</a></li>
+    <li>
+        <a rel="noopener" href="#page3">典型应用</a>
+    </li>
+    <li id="menu-contact"><a href="#page4">团队成员</a></li>
+    <li id="menu-line" ></li>
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://alvarotrigo.com/fullPage/dist/fullpage.dragAndMove2.limited.min.js"></script>
+<script type="text/javascript" src="https://alvarotrigo.com/fullPage/jquery.fullpage.extensions.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
+            anchors: ['page1', 'page2', 'page3', 'page4'],
+            navigationTooltips: ['fullPage', 'Open', 'Easy', 'Touch'],
+            css3: true,
+            scrollingSpeed: 1000,
+            navigation: true,
+            slidesNavigation: true,
+            responsiveHeight: 330,
+            dragAndMove: true,
+            dragAndMoveKey: 'YWx2YXJvdHJpZ28uY29tX0EyMlpISmhaMEZ1WkUxdmRtVT0wWUc=',
+            controlArrows: false,
+        });
+    });
+</script>
+<script type="text/javascript">!function(e,t,n){var i,a,l,o,s,c=".language",u=e("#menu-line"),f=(e("#menu"),e(".menu-active").width()),r=20,g=0,h=40,m="active";function d(t){switch(t.which){case 27:e(".examples").hasClass(m)&&k()}}function p(){e(this).hasClass("left")?e.fn.fullpage.moveSlideLeft():e.fn.fullpage.moveSlideRight()}function v(){clearTimeout(i),i=setTimeout(w,350)}function w(){if(f=e(".menu-active").width(),e(n).width()<=900){h=22;var t=e("#menu").find("a").first();S.call(t),g=t.position().left}else e(n).width()>900&&(h=40,S.call(e("#menu").find("a").first()),g=0)}function k(){clearTimeout(a),a=setTimeout(function(){C(".examples"),e.fn.fullpage.setAllowScrolling(!0)},300)}function b(t){C(".examples"),e.fn.fullpage.setAllowScrolling(!1)}function C(t){e(t).toggleClass(m)}function y(e){void 0!==e&&(e.preventDefault(),e.stopPropagation()),C(c)}function x(t){e(c).removeClass(m)}function S(){var t=e(this).parent();A(t.position().left,t.width())}function T(){A(g,f)}function A(e,t){u.stop().animate({left:e+h/2,width:t-h})}function D(t){t.preventDefault();var n=e(this).attr("href").substr(1);e(this).addClass(m).siblings().removeClass(m),e('[data-tab="'+n+'"]').addClass(m).siblings().removeClass(m)}o="https://alvarotrigo.com/fullPage/dist/non-critical.min.css",s=n.document.createElement("link"),n.document.styleSheets,s.rel="stylesheet",s.href=o,e("#stylesheet-critical").after(s),u.width(f-h).css("left",r),"en"!==(!(l=navigator.language||navigator.userLanguage)||l.indexOf("-")<0?l:l.split("-")[0])&&y(),v(),e("#menu li a").hover(S,T),e(n).on("resize",v),e(t).on("click",".shell-tab",D).on("click",".language-current",y).on("click","html",x).on("touchstart click",".info-close",k).on("click",".show-examples",b).keydown(d).on("click",".my-arrow",p),e.get("https://alvarotrigo.com/fullPage/routes/github-api.php",function(t){var n=Object.keys(t);n.forEach(function(n){e('[data-github="'+n+'"]').find("h4").text(t[n])})}),n.ga=n.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-94005074-1","auto"),ga("send","pageview")}(jQuery,document,window);</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<!-- End Google Analytics -->
+
+
+<noscript><img height="1" width="1" style="display:none" alt="fb" src="https://www.facebook.com/tr?id=1786065945027357&ev=PageView&noscript=1"></noscript>
+<input type="hidden" id="_4" value="7e68giOjsw">
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+</body>
+</html>
